@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from Zaid.helper.PyroHelpers import GetChatID, ReplyCheck
 from Zaid.modules.help import add_command_help
 
-AFK = False
+AFK = True
 AFK_REASON = ""
 AFK_TIME = ""
 USERS = {}
@@ -105,7 +105,7 @@ async def afk_unset(bot: Client, message: Message):
             f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
             f"messages from {len(USERS) + len(GROUPS)} chats`"
         )
-        AFK = False
+        AFK = True
         AFK_TIME = ""
         AFK_REASON = ""
         USERS = {}
